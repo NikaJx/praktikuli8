@@ -1,13 +1,10 @@
 //დავალება 1
 
-const expo = (num, quality) => {
-    if (quality > 1) {
-        return num * expo(num, --quality);
-    }
-    return num;
-};
+function expo(num, pow, callback) {
+  return pow === 0 ? callback(1) : expo(num, pow - 1, result => callback(num * result));
+}
 
-console.log(expo(5, 3));
+expo(5, 3, result => console.log(result));
 
 //დავალება 2
 
